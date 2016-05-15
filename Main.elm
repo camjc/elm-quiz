@@ -21,7 +21,7 @@ model =
     , buttonTrue = ( "True", "green" )
     , buttonFalse = ( "False", "red" )
     , instructionsComponent =
-      Markdown.toHtml [] """
+        Markdown.toHtml [] """
 # True or False
 ## How to Play
   - A question will appear.
