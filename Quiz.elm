@@ -2,13 +2,6 @@ module Quiz exposing (update, view, Question, Model)
 
 {-| Create a Quiz based on Boolean (True | False) questions.
 
-# Definition
-@docs update
-@docs view
-@docs Question
-@docs Model
-
-
 Example:
 
     import Quiz exposing (update, view, Model)
@@ -45,6 +38,12 @@ Example:
     main : Program Never
     main =
         Html.App.beginnerProgram { model = model, view = view, update = update }
+
+# Definition
+@docs update
+@docs view
+@docs Question
+@docs Model
 -}
 
 import Button
