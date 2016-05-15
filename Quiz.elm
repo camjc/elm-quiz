@@ -59,6 +59,7 @@ import QuizTypes
 
 
 {-| A Tuple of the answer and the question.
+
     (True, "Do I like chocolate?")
 -}
 type alias Question =
@@ -66,6 +67,7 @@ type alias Question =
 
 
 {-| The entire Model
+
     model =
         { questionId -- Should start at -1 to show the instructions.
         , questions -- An array of `Question`s.
@@ -119,8 +121,7 @@ updateModelWithGuess guess model =
         }
 
 
-{-| The update function, pass to Html.App.beginnerProgram
--}
+{-| The update function, pass to Html.App.beginnerProgram -}
 update : QuizTypes.Msg -> QuizTypes.Model -> QuizTypes.Model
 update action model =
     case action of
@@ -138,8 +139,7 @@ update action model =
 -- VIEW
 
 
-{-| The view function, pass to Html.App.beginnerProgram
--}
+{-| The view function, pass to Html.App.beginnerProgram -}
 view : QuizTypes.Model -> Html QuizTypes.Msg
 view model =
     div
