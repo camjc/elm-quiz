@@ -1,8 +1,9 @@
 module Main exposing (main)
 
 import Quiz exposing (update, view, Model)
+import QuizTypes exposing (Msg)
 import Array exposing (fromList, empty)
-import Html.App exposing (beginnerProgram)
+import Html exposing (beginnerProgram)
 import Markdown
 
 
@@ -31,6 +32,6 @@ model =
     }
 
 
-main : Program Never
+main : Program Never Model QuizTypes.Msg
 main =
-    Html.App.beginnerProgram { model = model, view = view, update = update }
+    Html.beginnerProgram { model = model, view = view, update = update }

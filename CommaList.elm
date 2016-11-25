@@ -29,9 +29,9 @@ view listOfLabels buttonTuple =
     else
         div
             [ style
-                [ ( "color", (snd buttonTuple) )
+                [ ( "color", (Tuple.second buttonTuple) )
                 , ( "line-height", "1.6" )
                 , ( "margin-top", "0.5rem" )
                 ]
             ]
-            [ text ((fst buttonTuple) ++ ": " ++ (getListString listOfLabels) ++ ".") ]
+            [ text ((Tuple.first buttonTuple) ++ ": " ++ (getListString listOfLabels) ++ ".") ]

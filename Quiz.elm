@@ -6,7 +6,7 @@ Example:
 
     import Quiz exposing (update, view, Model)
     import Array exposing (fromList, empty)
-    import Html.App exposing (beginnerProgram)
+    import Html exposing (beginnerProgram)
     import Markdown exposing (toHtml)
 
 
@@ -37,7 +37,7 @@ Example:
 
     main : Program Never
     main =
-        Html.App.beginnerProgram { model = model, view = view, update = update }
+        Html.beginnerProgram { model = model, view = view, update = update }
 
 # Definition
 @docs update
@@ -85,7 +85,7 @@ getCurrentQuestion : QuizTypes.Model -> QuizTypes.Answer
 getCurrentQuestion model =
     case Array.get model.questionId model.questions of
         Just question ->
-            { id = model.questionId, value = (fst question), label = (snd question) }
+            { id = model.questionId, value = (Tuple.first question), label = (Tuple.second question) }
 
         Nothing ->
             { id = -1, value = False, label = "End" }
@@ -120,7 +120,8 @@ updateModelWithGuess guess model =
         }
 
 
-{-| The update function, pass to Html.App.beginnerProgram -}
+{-| The update function, pass to Html.beginnerProgram
+-}
 update : QuizTypes.Msg -> QuizTypes.Model -> QuizTypes.Model
 update action model =
     case action of
@@ -138,7 +139,8 @@ update action model =
 -- VIEW
 
 
-{-| The view function, pass to Html.App.beginnerProgram -}
+{-| The view function, pass to Html.beginnerProgram
+-}
 view : QuizTypes.Model -> Html QuizTypes.Msg
 view model =
     div

@@ -22,11 +22,11 @@ view : QuizTypes.ButtonTuple -> QuizTypes.Msg -> Html QuizTypes.Msg
 view buttonTuple action =
     button
         [ buttonTuple
-            |> snd
+            |> Tuple.second
             |> getStyle
         , Html.Events.onClick action
         ]
         [ buttonTuple
-            |> fst
+            |> Tuple.first
             |> text
         ]
