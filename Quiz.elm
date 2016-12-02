@@ -1,4 +1,4 @@
-module Quiz exposing (update, view, Question, Model)
+module Quiz exposing (update, view, Question, Model, Msg)
 
 {-| Create a Quiz based on Boolean (True | False) questions.
 
@@ -44,6 +44,7 @@ Example:
 @docs view
 @docs Question
 @docs Model
+@docs Msg
 -}
 
 import Button
@@ -79,6 +80,12 @@ type alias Question =
 -}
 type alias Model =
     QuizTypes.Model
+
+
+{-| The actions that can be performed
+-}
+type alias Msg =
+    QuizTypes.Msg
 
 
 getCurrentQuestion : QuizTypes.Model -> QuizTypes.Answer
